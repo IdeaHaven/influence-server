@@ -9,10 +9,10 @@ var configData = {};
 
 configData.general = {
   apiVersion: "6.2.3",
-  serverName: "actionHero API",
+  serverName: "influence API",
   // id: "myActionHeroServer",                                    // id can be set here, or generated dynamically.  be sure that every server you run as a unique ID (which will happen when genrated dynamically)
   serverToken: "change-me",                                       // A unique token to your application which servers will use to authenticate to eachother
-  welcomeMessage : "Hello! Welcome to the actionHero api",        // The welcome message seen by TCP and webSocket clients upon connection
+  welcomeMessage : "Hello! Welcome to the influence api",        // The welcome message seen by TCP and webSocket clients upon connection
   flatFileDirectory: __dirname + "/public/",                      // The directory which will be the root for the /public route
   flatFileNotFoundMessage: "Sorry, that file is not found :(",    // The body message to acompany 404 (file not found) errors regading flat files
   serverErrorMessage: "The server experienced an internal error", // The message to acompany 500 errors (internal server errors)

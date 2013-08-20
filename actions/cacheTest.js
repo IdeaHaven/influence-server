@@ -21,8 +21,7 @@ action.outputExample = {
 
 /////////////////////////////////////////////////////////////////////
 // functional
-action.run = function(api, connection, next)
-{
+action.run = function(api, connection, next){
   var key = "cacheTest_" + connection.params.key;
   var value = connection.params.value;
   connection.response.cacheTestResults = {};

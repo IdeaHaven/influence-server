@@ -8,7 +8,7 @@ describe('Action: cacheTest', function(){
     specHelper.prepare(0, function(api){
       apiObj = specHelper.cleanAPIObject(api);
       done();
-    })
+    });
   });
 
   it('cacheTest: no params', function(done){
