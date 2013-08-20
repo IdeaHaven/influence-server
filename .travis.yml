@@ -1,0 +1,20 @@
+notifications:
+  email:
+    recipients:
+      - epiphanymachine@gmail.com
+      - quetzaluz@gmail.com
+      - mcguireghs@gmail.com
+      - jjspragu@asu.edu
+      - riksidhu@gmail.com
+    on_success: change
+    on_failure: always
+language: node_js
+node_js:
+  - 0.8.0
+  - 0.10.0
+branches:
+  only:
+    - master
+    - develop
+services:
+  - redis-server
