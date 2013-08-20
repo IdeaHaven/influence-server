@@ -1,15 +1,33 @@
 {
-  "author": {
-    "name": "You",
-    "email": "email@gmail.com"
-  },
-  "name": "actionHero",
-  "description": "actionHero.js is a multi-transport API Server with integrated cluster capabilites and delayed tasks",
-  "version": "6.2.5",
-  "homepage": "http://actionherojs.com",
+  "author": "Idea Haven <greg@ideahaven.co>",
+  "name": "influence-server",
+  "description": "API server for the influence app github.com/IdeaHaven/influence",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Gregory Hilkert",
+      "email": "EpiphanyMachine@gmail.com"
+    },
+    {
+      "name": "Cyd La Luz",
+      "email": "quetzaluz@gmail.com"
+    },
+    {
+      "name": "Jake McGuire",
+      "email": "mcguireghs@gmail.com"
+    },
+    {
+      "name": "Josh Sprague",
+      "email": "jjspragu@asu.edu"
+    },
+    {
+      "name": "Ricky Sidhu",
+      "email": "riksidhu@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/evantahler/actionHero.git"
+    "url": "https://github.com/IdeaHaven/influence-server.git"
   },
   "engines": {
     "node": ">=0.8.0"
