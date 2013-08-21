@@ -91,7 +91,13 @@ configData.servers = {
     bindIP: "0.0.0.0",                   // which IP to listen on (use 0.0.0.0 for all)
     keyFile: "./certs/server-key.pem",   // only for secure = true
     certFile: "./certs/server-cert.pem", // only for secure = true
-    httpHeaders : { },                   // Any additional headers you want actionHero to respond with
+    httpHeaders : {                      // Any additional headers you want actionHero to respond with
+      'access-control-allow-methods'     : 'HEAD, POST, GET, PUT, PATCH, DELETE',
+      'access-control-max-age'           : '86400', // 24 hours
+      'access-control-allow-headers'     : 'accept, accept-charset, accept-encoding, accept-language, authorization, content-length, content-type, host, origin, proxy-connection, referer, user-agent, x-requested-with',
+      'access-control-allow-credentials' : 'true',
+      'access-control-allow-origin'      : '*'
+    },
     urlPathForActions : "api",           // route which actions will be served from; secondary route against this route will be treated as actions, IE: /api/?action=test == /api/test/
     urlPathForFiles : "public",          // route which static files will be served from; path (relitive to your project root) to server static content from
     rootEndpointType : "api",            // when visiting the root URL, should visitors see "api" or "file"? visitors can always visit /api and /public as normal
