@@ -6,7 +6,7 @@ API
 
 Politicians
 ------------------
-`/api/politicians`
+`/api/politician`
 
 * required parameters: none
 * optional parameters:

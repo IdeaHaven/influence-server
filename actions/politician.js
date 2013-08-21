@@ -2,7 +2,7 @@ var orm = require("orm");
 var _ = require("lodash");
 
 exports.action = {
-  name: "politicians",
+  name: "politician",
   description: "Return basic information about all politicians.",
   inputs: {
     required: [],
@@ -18,7 +18,7 @@ exports.action = {
     orm.connect("postgres://influence:plantlife@localhost/influence_db", function (err, db){
       if(err) { console.log('error', err); next(connection, true); }
       else if(db){
-        Politician = require('../initializers/database.js').Politician;
+        Politician = require('../helpers/dbModels.js').Politician;
         connection.response.results = [];
 
         // all reps requested

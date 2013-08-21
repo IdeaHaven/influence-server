@@ -44,6 +44,6 @@ example:
 exports.routes = {
   get: [
     { path: "/status", action: "status" }, // (GET) /api/users
-    { path: "/reps", action: "reps" } // (GET) /api/users
+    { path: "/politician", action: "politician" } // (GET) /api/users
   ]
 };
