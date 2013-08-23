@@ -17,7 +17,7 @@ page.open "http://www.google.com/search?q=#{company}&btnI", (status) ->
       return $("link[rel='shortcut icon']").attr('href')
     url = page.url.match(/(https?:\/\/\w+.\w+.\w+)\//)[1]
     # console.log favicon
-    unless favicon.match(/http/)
+    unless favicon and favicon.match(/http/)
       favicon = favicon || "/favicon.ico"
       favicon = url + favicon
     console.log JSON.stringify({url: favicon})
