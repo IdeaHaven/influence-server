@@ -2,10 +2,10 @@
 exports.Politician = function(api, next, db){
   db.driver.execQuery("DROP TABLE politician", function (err, data) {
     if (data){
-      // this should be moved to a task!!!!!!!
+      console.log('Politician Table Dropped...')
       var Politician = require('./dbModels').Politician;
       Politician.sync(function (err) {
-        err ? console.log('Error Syncing Politician Table: ', err) : console.log('Table Synced');
+        err ? console.log('Error Syncing Politician Table: ', err) : console.log('Politician Table Synced...');
 
         // csv file convert to json
         var Converter, csvFileName, csvConverter;
@@ -18,9 +18,10 @@ exports.Politician = function(api, next, db){
         //end_parsed will be emitted once parsing finished
         csvConverter.on("end_parsed",function(jsonObj){
           jsonFromCsv = jsonObj; //here is your result json object
-          console.log('JSON created');
+          console.log('JSON created from: ', csvFileName);
+          console.log('Writing JSON to Politican Table...');
           Politician.create(jsonObj.csvRows, function (err){
-            err && console.log('Error writing new items ', err);
+            err ? console.log('Error Writing JSON to Politician Table: ', err) : console.log('JSON Successfully written to Politician Table.');
             next();
           });
         });
