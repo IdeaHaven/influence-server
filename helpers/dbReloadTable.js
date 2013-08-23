@@ -12,7 +12,7 @@ exports.Politician = function(api, next, db){
         //Converter Class
         Converter=require("csvtojson").core.Converter;
         //CSV File Path or CSV String or Readable Stream Object
-        csvFileName="/tmp/legislators.txt";
+        csvFileName="/tmp/legislators.csv";
         //new converter instance
         csvConverter=new Converter();
         //end_parsed will be emitted once parsing finished

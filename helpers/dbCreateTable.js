@@ -1,9 +1,11 @@
 // drop the table then re-add it from the csv on server boot
-exports.Politician = function(api, next, db){
-  var Politician;
+exports.all = function(api, next, db){
+  var Politician, Favicon, tempNext;
   Politician = require('./dbModels').Politician;
+  Favicon = require('./dbModels').Favicon;
+
   Politician.sync(function (err) {
-    err ? console.log('Error Syncing Politician Table: ', err) : console.log('Table Synced');
+    err ? console.log('Error Syncing Politician Table: ', err) : console.log('Politician Table Synced');
 
     // csv file convert to json
     var Converter, csvFileName, csvConverter;
@@ -19,11 +21,19 @@ exports.Politician = function(api, next, db){
       console.log('JSON created');
       Politician.create(jsonObj.csvRows, function (err){
         err && console.log('Error writing new items ', err);
-        next();
+        tempNext();
       });
     });
     // init read from file
     csvConverter.from(csvFileName);
 
   });
+
+  tempNext = function(){
+    Favicon.sync(function (err) {
+      err ? console.log('Error Syncing Favicon Table: ', err) : console.log('Favicon Table Synced');
+      next();
+    });
+  };
+
 };

@@ -13,21 +13,40 @@ exports.action = {
 
     exec = require('child_process').exec;
     company = connection.params.company;
+    Favicon = require('../helpers/dbModels.js').Favicon;
 
-    callback = function(){
+    // check database for company name
+    Favicon.find({ company: company }, function(err, data){
+      if(data.length > 0){
+        console.log('URL for '+company+' found in database.');
+        connection.response.favicon = {url: data[0].url};
+        next(connection, true);
+      } else {
+        scrape();
+      }
+    });
+
+    // if not in databse run the scraper
+    scrape_callback = function(){
       console.log(result.url);
       connection.response.favicon = result;
       next(connection, true);
+      Favicon.create({company: company, url: result.url}, function (err){
+        err && console.log('Error writing new url ', err);
+      });
     };
 
-    exec('phantomjs ./helpers/phantom-scrapeLogo.coffee ' + company,
-        function (error, stdout, stderr) {
-            console.log('running...');
-            console.log(stdout, stderr);      // Always empty
-            result = JSON.parse(stdout);
-            callback();
-        }
-    );
+    scrape = function(){
+      console.log('URL for '+company+' not in database, scraping...')
+      exec('phantomjs ./helpers/phantom-scrapeLogo.coffee ' + company,
+          function (error, stdout, stderr) {
+              console.log('running...');
+              console.log(stdout, stderr);      // Always empty
+              result = JSON.parse(stdout);
+              scrape_callback();
+          }
+      );
+    };
 
   }
 };

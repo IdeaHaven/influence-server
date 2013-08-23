@@ -30,5 +30,14 @@ exports.create = function(api, next, db){
     senate_class: String,
     birthdate: String
   });
+  exports.Favicon = db.define('favicon', {
+    company: String,
+    url: String
+  });
+  // ****** DEFAULT ***** use this to skip table creation
   next();
+  // ****** use this to create tables and add data from external files (csv)
+  // require('./dbCreateTable.js').all(api, next, db);
+  // ***** use this to create tables and add data from external files (csv)
+  // require('./dbReloadTable.js').Politician(api, next, db);
 };

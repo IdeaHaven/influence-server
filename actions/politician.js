@@ -1,4 +1,3 @@
-var orm = require("orm");
 var _ = require("lodash");
 
 exports.action = {
