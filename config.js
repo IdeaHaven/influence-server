@@ -99,7 +99,7 @@ configData.servers = {
       'access-control-allow-origin'      : '*'
     },
     urlPathForActions : "api",           // route which actions will be served from; secondary route against this route will be treated as actions, IE: /api/?action=test == /api/test/
-    urlPathForFiles : "public",          // route which static files will be served from; path (relitive to your project root) to server static content from
+    urlPathForFiles : "",          // route which static files will be served from; path (relitive to your project root) to server static content from
     rootEndpointType : "api",            // when visiting the root URL, should visitors see "api" or "file"? visitors can always visit /api and /public as normal
     directoryFileType : "index.html",    // the default filetype to server when a user requests a directory
     flatFileCacheDuration : 60,          // the header which will be returend for all flat file served from /public; defiend in seconds
