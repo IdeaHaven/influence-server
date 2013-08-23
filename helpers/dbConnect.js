@@ -3,12 +3,12 @@ var orm = require("orm");
 exports.dbConnect = function(api, next){
 
   var opts = {
-    database : "d7nc6q0ltq20n3",
+    database : "d6lv2nn7kpjr5a",
     protocol : "postgres",
-    host     : "ec2-54-221-229-7.compute-1.amazonaws.com",
+    host     : "ec2-54-221-236-4.compute-1.amazonaws.com",
     port     : 5432,         // optional, defaults to database default
-    user     : "mvtsikecshryig",
-    password : "OW81TUWeV1BsPzxEAs_hi58wyZ",
+    user     : "ymptfeckyuumiy",
+    password : "wYdegzBBoyvOvIL3RPGzYpECUE",
     ssl      : true,
     query    : {
       pool     : false,   // optional, false by default
