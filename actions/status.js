@@ -13,7 +13,7 @@ action.outputExample = {
   status: "OK",
   uptime: 1234,
   stats: {}
-}
+};
 
 /////////////////////////////////////////////////////////////////////
 // functional
@@ -23,7 +23,7 @@ action.run = function(api, connection, next){
   connection.response.uptime = now - api.bootTime;
   api.stats.getAll(function(err, stats){
     connection.response.stats = stats;
-    connection.response.tasks = "HEEEEEEEEEEEEEEEEEEEY";
+    connection.response.tasks = {};
     connection.response.workers = {};
     api.tasks.getAllTasks(api, function(err, allTasks){
       for(var i in allTasks){

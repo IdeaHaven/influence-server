@@ -14,19 +14,19 @@ action.outputExample = {
   sleepEnded: 1234,
   sleepDuration: 0,
   sleepDelta: 0
-}
+};
 
 /////////////////////////////////////////////////////////////////////
 // functional
 
 var isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
-}
+};
 
 action.run = function(api, connection, next){
   var sleepDuration = connection.params.sleepDuration;
   if(!isNumber(sleepDuration)){
-    sleepDuration = 1000; 
+    sleepDuration = 1000;
   }else{
     sleepDuration = parseFloat(sleepDuration);
   }
