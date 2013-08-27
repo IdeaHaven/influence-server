@@ -96,7 +96,7 @@ configData.servers = {
       'access-control-max-age'           : '86400', // 24 hours
       'access-control-allow-headers'     : 'accept, accept-charset, accept-encoding, accept-language, authorization, content-length, content-type, host, origin, proxy-connection, referer, user-agent, x-requested-with',
       'access-control-allow-credentials' : 'true',
-      'access-control-allow-origin'      : '*'
+      'Access-Control-Allow-Origin'      : '*'
     },
     urlPathForActions : "api",           // route which actions will be served from; secondary route against this route will be treated as actions, IE: /api/?action=test == /api/test/
     urlPathForFiles : "",          // route which static files will be served from; path (relitive to your project root) to server static content from
