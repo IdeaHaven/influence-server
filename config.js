@@ -87,7 +87,7 @@ configData.faye = {
 configData.servers = {
   "web" : {
     secure: false,                       // HTTP or HTTPS?
-    port: process.env.PORT || 8080,      // Port or Socket
+    port: process.env.PORT || 1337,      // Port or Socket
     bindIP: "0.0.0.0",                   // which IP to listen on (use 0.0.0.0 for all)
     keyFile: "./certs/server-key.pem",   // only for secure = true
     certFile: "./certs/server-cert.pem", // only for secure = true
