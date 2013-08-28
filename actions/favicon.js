@@ -22,8 +22,8 @@ exports.action = {
         connection.response.favicon = {url: data[0].url};
         next(connection, true);
       } else {
-        next(connection, true);
-        // scrape();
+        // next(connection, true); // this disables scraping
+        scrape();  // this enables scraping
       }
     });
 
