@@ -22,7 +22,8 @@ exports.action = {
         connection.response.favicon = {url: data[0].url};
         next(connection, true);
       } else {
-        scrape();
+        next(connection, true);
+        // scrape();
       }
     });
 
@@ -40,7 +41,6 @@ exports.action = {
       console.log('URL for '+company+' not in database, scraping...')
       exec('phantomjs ./helpers/phantom-scrapeLogo.coffee ' + company,
           function (error, stdout, stderr) {
-              console.log('running...');
               console.log(stdout, stderr);      // Always empty
               result = JSON.parse(stdout);
               scrape_callback();
